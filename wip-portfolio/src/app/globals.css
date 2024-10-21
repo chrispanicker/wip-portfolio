@@ -39,6 +39,19 @@
   font-style: italic;
 }
 
+@font-face {
+  font-family: Arial_Narrow_Bold;
+  src:url('../../public/Arial\ Narrow\ Bold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Arial_Narrow_Bold_Italic;
+  src:url('../../public/Arial\ Narrow\ Bold\ Italic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+}
 
 .mono{
   font-family: "DM Mono", monospace;
@@ -54,6 +67,10 @@
 
 .sans{
   font-family: "Arial_Narrow";
+}
+
+.sans-bold{
+  font-family: "Arial_Narrow_Bold";
 }
 
 

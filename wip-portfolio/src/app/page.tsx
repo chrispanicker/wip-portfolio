@@ -1,15 +1,15 @@
 
 export default function Home() {
-  const category = "whitespace-nowrap sans capitalize text-[1.6rem]"
+  const category = "whitespace-nowrap sans-bold capitalize text-[1.6rem]"
   const gridParent = "flex lg:flex-row flex-col text-[1.2rem] lg:items-end uppercase lg:pb-0 pb-4"
   const info = "mono-ital lg:mb-[.1rem]"
 
   return (
     <main className="w-screen h-screen border border-[1rem] outline outline-black outline-2 border-black transition-[transform] min-[1300px]:rotate-[-2deg] min-[1000px]:rotate-[2deg] min-[800px]:rotate-[-2deg] rotate-[2deg] bg-white overflow-y-scroll">
-      <header className="lg:h-[10%] bg-white lg:text-[6rem] font-bold text-[5rem] flex justify-start items-center lg:leading-auto leading-[5.2rem] font-bold lg:mx-5 mx-2 sans"><h1>Panicker</h1></header>
+      <header className="lg:h-[10%] bg-white lg:text-[6rem] text-[5rem] flex justify-start items-center lg:leading-auto leading-[5.2rem] lg:mx-5 mx-2 sans-bold"><h1>Panicker</h1></header>
       <div className="lg:h-[7%] lg:py-0 py-2 bg-black text-white sans lg:text-[2.6rem] min-[500px]:text-[2rem] flex items-center lg:px-5 px-2">
-        <h2 className="inline font-bold">Work Permit&nbsp;</h2>
-        <h2 className="inline">Department of Portfolios</h2>
+        <h2 className="inline sans-bold">Work Permit</h2>
+        <h2 className="inline">&nbsp;Department of Portfolios</h2>
       </div>
       
       <section className="lg:grid lg:grid-cols-2 lg:p-5 p-2 lg:text-[1.5rem]">
