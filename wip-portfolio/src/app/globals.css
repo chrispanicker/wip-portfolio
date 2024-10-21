@@ -4,8 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('/../public/Arial\ Narrow.woff');
-@import url('/../public/Arial\ Narrow\ Italic.woff');
 
 
 /* :root {
@@ -20,6 +18,26 @@
   }
 } */
 
+@font-face {
+  font-family: Arial-Narrow;
+  src: url('/../public/Arial\ Narrow.woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Arial_Narrow;
+  src:url('../../public/Arial\ Narrow.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Arial_Narrow_Italic;
+  src:url('../../public/Arial\ Narrow\ Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
 
 
 .mono{
@@ -30,15 +48,12 @@
 
 .mono-ital{
   font-family: "DM Mono", monospace;
-  font-weight: 300;
+  font-weight: 700;
   font-style: italic;
 }
 
 .sans{
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: condensed;
+  font-family: "Arial_Narrow";
 }
 
 
