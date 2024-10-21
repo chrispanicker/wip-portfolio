@@ -5,10 +5,10 @@ export default function Home() {
   const info = "mono-ital lg:mb-[.1rem]"
 
   return (
-    <main className="w-screen h-screen border border-[1rem] outline outline-black outline-2 border-black transition-[transform] min-[1300px]:rotate-[-2deg] min-[1000px]:rotate-[2deg] min-[800px]:rotate-[-2deg] rotate-[2deg] bg-white overflow-y-scroll rounded-2xl">
+    <main className="w-screen h-[100dvh] border border-[1rem] rotate-[2deg] bg-white overflow-y-scroll outline outline-black outline-2 border-black transition-[transform] min-[1300px]:rotate-[-2deg] min-[1000px]:rotate-[2deg] min-[800px]:rotate-[-2deg]">
       <header className="lg:h-[10%] bg-white lg:text-[6rem] text-[5rem] flex justify-between items-end lg:leading-auto leading-[5.2rem] lg:mx-5 mx-2 sans-bold">
-        <h1>Panicker</h1>
-        {/* <svg className="mb-5 mr-2" stroke="black" strokeWidth={20} viewBox="0 0 100 100" width={25} height={25}>
+        <h1 className="mb-2">Panicker</h1>
+        {/* <svg className="mb-5 mr-2 h-[40%] w-auto" stroke="black" strokeWidth={20} viewBox="0 0 100 100" width={25} height={25}>
           <polyline points="
           0 0
           100 100
@@ -42,11 +42,11 @@ export default function Home() {
 
       </section>
       <footer className={`lg:h-[30%] lg:p-5 p-2 pb-24 border-t-[1rem] border-black text-[1.5rem] mono-ital flex justify-between flex-col`}>
-        <div className="sans not-italic pb-24">
+        <div className="sans not-italic lg:text-[2.6rem] pb-24">
           <p className="pb-3">Chris is currently the designer for Pitchfork. His work is featured on Pitchfork and GQ, and by <a className="hover:underline" href="https://www.instagram.com/p/C92zCcASIs0/?img_index=1">Charli xcx*</a></p>
-          <p className="">He is open for work, and for any inquries hit him at <a className="hover:underline" href="mailto:chris@panicker.design">chris@panicker.design</a></p>
+          <p className="">He is open for work and/or a coffee. Just hit him at <a className="underline" href="mailto:chris@panicker.design">chris@panicker.design</a></p>
         </div>
-        <p className="sans text-[1rem] leading-[1.4rem]">*Just an IG post, lol </p>
+        <p className="sans text-[1rem] lg:text-[1.5rem] leading-[1.4rem]">*Just an IG post, lol </p>
       </footer>
     </main>
   );
