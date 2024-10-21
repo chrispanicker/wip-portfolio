@@ -29,7 +29,7 @@ export default function Home() {
           </div>
 
       </section>
-      <footer className={`lg:h-[30%] lg:p-5 p-2 border-t-[1rem] border-black lg:text-[1.5rem] mono-ital flex justify-between flex-col`}>
+      <footer className={`lg:h-[30%] lg:p-5 p-2 pb-32 border-t-[1rem] border-black lg:text-[1.5rem] mono-ital flex justify-between flex-col`}>
         <div className="sans">
           <p className="pb-2">Chris is currently the designer for Pitchfork.</p>
           <p className="pb-2">His work is featured on Pitchfork and GQ, and on <a className="hover:underline" href="https://www.instagram.com/p/C92zCcASIs0/?img_index=1">Charli xcx&apos;s Instagram.</a></p>
