@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="w-screen h-screen border border-[1rem] outline outline-black outline-2 border-black transition-[transform] min-[1300px]:rotate-[-2deg] min-[1000px]:rotate-[2deg] min-[800px]:rotate-[-2deg] rotate-[2deg] bg-white overflow-y-scroll">
       <header className="lg:h-[10%] bg-white lg:text-[6rem] lg:tracking-[-.3rem] text-[3rem] tracking-[-.2rem] flex justify-start items-center  font-bold lg:mx-5 mx-2"><h1>Panicker</h1></header>
-      <div className="lg:h-[7%] lg:py-0 py-2 bg-black text-white lg:text-[2.6rem] min-[500px]:text-[1.5rem] flex lg:flex-row flex-col justify-center lg:justify-start items-start leading-[1.7rem] lg:items-center lg:px-5 px-2">
+      <div className="lg:h-[7%] lg:py-0 py-2 bg-black text-white lg:text-[2.6rem] min-[500px]:text-[1.5rem] flex lg:flex-row flex-col justify-center lg:justify-start items-start leading-[1.2rem] lg:items-center lg:px-5 px-2">
         <h2 className="font-bold">Work Permit&nbsp;</h2>
         <h2>Department of Portfolios</h2>
       </div>
