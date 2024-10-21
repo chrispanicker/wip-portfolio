@@ -6,10 +6,10 @@ export default function Home() {
 
   return (
     <main className="w-screen h-screen border border-[1rem] outline outline-black outline-2 border-black transition-[transform] min-[1300px]:rotate-[-2deg] min-[1000px]:rotate-[2deg] min-[800px]:rotate-[-2deg] rotate-[2deg] bg-white overflow-y-scroll">
-      <header className="lg:h-[10%] bg-white lg:text-[6rem] lg:tracking-[-.3rem] text-[3rem] tracking-[-.2rem] flex justify-start items-center font-bold lg:mx-5 mx-2"><h1>Panicker</h1></header>
-      <div className="lg:h-[7%] lg:py-0 py-2 bg-black text-white lg:text-[2.6rem] min-[500px]:text-[1.5rem] flex lg:flex-row flex-col justify-center lg:justify-start items-start leading-[1.5rem] lg:items-center lg:px-5 px-2">
-        <h2 className="font-bold">Work Permit&nbsp;</h2>
-        <h2>Department of Portfolios</h2>
+      <header className="lg:h-[10%] bg-white lg:text-[6rem] font-bold text-[5rem] flex justify-start items-center lg:leading-auto leading-[5.2rem] font-bold lg:mx-5 mx-2 sans"><h1>Panicker</h1></header>
+      <div className="lg:h-[7%] lg:py-0 py-2 bg-black text-white sans lg:text-[2.6rem] min-[500px]:text-[2rem] flex items-center lg:px-5 px-2">
+        <h2 className="inline font-bold">Work Permit&nbsp;</h2>
+        <h2 className="inline">Department of Portfolios</h2>
       </div>
       
       <section className="lg:grid lg:grid-cols-2 lg:p-5 p-2 lg:text-[1.5rem]">
@@ -30,12 +30,12 @@ export default function Home() {
 
       </section>
       <footer className={`lg:h-[30%] lg:p-5 p-2 border-t-[1rem] border-black lg:text-[1.5rem] mono-ital flex justify-between flex-col`}>
-        <div className="">
-          <p className="pb-2 uppercase">Chris is currently the designer for Pitchfork.</p>
-          <p className="pb-2 uppercase">His work is featured on pitchfork and gq, on <a className="hover:underline" href="https://www.instagram.com/p/C92zCcASIs0/?img_index=1">Charli xcx&apos;s Instagram</a></p>
-          <p className="pb-2 uppercase">He is open for work, and for any inquries hit him at <a className="hover:underline" href="mailto:chris@panicker.design">chris@panicker.design</a></p>
+        <div className="sans">
+          <p className="pb-2">Chris is currently the designer for Pitchfork.</p>
+          <p className="pb-2">His work is featured on Pitchfork and GQ, and on <a className="hover:underline" href="https://www.instagram.com/p/C92zCcASIs0/?img_index=1">Charli xcx&apos;s Instagram.</a></p>
+          <p className="pb-2">He is open for work, and for any inquries hit him at <a className="hover:underline" href="mailto:chris@panicker.design">chris@panicker.design</a></p>
         </div>
-        <p className="font-[Arial]">This portfolio is slated to be completed by September 18, 20XX.* In the meantime, enjoy your time here.  </p>
+        <p className="sans">This portfolio is slated to be completed by September 18, 20XX.* In the meantime, enjoy your time here.  </p>
       </footer>
     </main>
   );
