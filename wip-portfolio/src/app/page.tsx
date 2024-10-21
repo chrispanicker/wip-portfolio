@@ -1,8 +1,7 @@
-import Image from "next/image";
 
 export default function Home() {
-  let category = "whitespace-nowrap sans capitalize"
-  let gridParent = "flex lg:flex-row flex-col mono-ital uppercase lg:pb-0 pb-4"
+  const category = "whitespace-nowrap sans capitalize"
+  const gridParent = "flex lg:flex-row flex-col mono-ital uppercase lg:pb-0 pb-4"
 
   return (
     <main className="w-screen h-screen border border-[1rem] border-black transition-[transform] min-[1300px]:rotate-[-2deg] min-[1000px]:rotate-[2deg] min-[800px]:rotate-[-2deg] rotate-[2deg] bg-white overflow-y-scroll">
@@ -29,7 +28,7 @@ export default function Home() {
       <footer className={`h-[37%] lg:h-[30%] lg:p-5 p-2 border-t-[1rem] border-black lg:text-[1.5rem] mono-ital flex justify-between flex-col`}>
         <div className="">
           <p className="pb-2 uppercase">Chris is currently the designer for Pitchfork.</p>
-          <p className="pb-2 uppercase">His work is featured on pitchfork and gq, on <a className="hover:underline" href="https://www.instagram.com/p/C92zCcASIs0/?img_index=1">Charli xcx's Instagram</a></p>
+          <p className="pb-2 uppercase">His work is featured on pitchfork and gq, on <a className="hover:underline" href="https://www.instagram.com/p/C92zCcASIs0/?img_index=1">Charli xcx&apos;s Instagram</a></p>
           <p className="pb-2 uppercase">He is open for work, and for any inquries hit him at <a className="hover:underline" href="mailto:chris@panicker.design">chris@panicker.design</a></p>
         </div>
         <p className="sans">This portfolio is slated to be completed by September 18, 20XX.* In the meantime, enjoy your time here.  </p>
