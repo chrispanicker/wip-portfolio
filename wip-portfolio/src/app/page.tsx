@@ -25,7 +25,7 @@ export default function Home() {
             </span>
             <span className="flex overflow-x-scroll snap-x snap-mandatory">
               {project.images?.map((e:any, index:number) => (
-                  <video key={`project.slug+${index}`} width="1440" height="1080" muted loop autoPlay preload="true" className="w-screen  h-[50dvh] lg:h-[87dvh] pr-2 snap-center snap-always">
+                  <video key={`project.slug+${index}`} width="1440" height="1080" muted loop autoPlay playsInline preload="true" className="w-screen  h-[50dvh] lg:h-[87dvh] pr-2 snap-center snap-always">
                     <source src={getFile(e, { projectId: `${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}`, dataset: "production" }).asset.url} type="video/mp4" />
                     <track
                       src="/path/to/captions.vtt"
