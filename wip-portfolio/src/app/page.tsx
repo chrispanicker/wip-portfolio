@@ -7,7 +7,7 @@ import { PortableText } from "next-sanity";
 const allProjects = await getProjects()
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
+//test
 export default function Home() {
   return (
     <>
