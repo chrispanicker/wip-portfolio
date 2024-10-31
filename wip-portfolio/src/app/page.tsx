@@ -14,9 +14,9 @@ export default function Home() {
     <section className="pb-20 snap-y snap-mandatory overflow-y-scroll">
       {allProjects.map((project:any)=>(
           <div key={project._id} className="relative text-white sans px-5 snap-start snap-always">
-            <span className="flex lg:flex-row flex-col lg:justify-between lg:items-end justify-start items-start text-2xl py-3">
+            <span className="flex lg:flex-row flex-col lg:justify-between lg:items-end justify-start items-start text-2xl py-3 lg:blur-[.03rem] blur-[.02rem]">
               <div className="flex lg:flex-row flex-col">
-                <h1 className="whitespace-nowrap bottom-1 blur-[.03rem] pr-2 sans-bold">{project.name}</h1>
+                <h1 className="whitespace-nowrap bottom-1 pr-2 sans-bold">{project.name}</h1>
                 <div className="col-span-4 sans">
                   <PortableText value={project.content}/>
                 </div>
