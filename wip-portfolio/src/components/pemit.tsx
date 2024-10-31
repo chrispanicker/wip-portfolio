@@ -1,7 +1,7 @@
 "use client"
 export function  Permit(){
-    const category = "whitespace-nowrap sans-bold capitalize text-[1.6rem]"
-    const gridParent = "flex lg:flex-row flex-col text-[1.2rem] lg:items-end uppercase lg:pb-0 pb-4"
+    const category = "whitespace-nowrap sans-bold capitalize lg:text-[1.6rem] lg:pb-0 pb-2"
+    const gridParent = "flex lg:flex-row flex-col lg:text-[1.2rem] lg:items-end uppercase lg:pb-0 pb-4"
     const info = "mono-ital lg:mb-[.1rem]"
 
     return(
@@ -39,7 +39,7 @@ export function  Permit(){
             <h2 className="inline">Department of Portfolios</h2>
         </div>
         
-        <section className="lg:grid lg:grid-cols-2 lg:p-5 p-2 lg:text-[1.5rem] lg:leading-[2.8rem] leading-[1.8rem]">
+        <section className="lg:grid lg:grid-cols-2 lg:p-5 p-2 lg:text-[1.5rem] lg:leading-[2.8rem] leading-[1rem]">
             <div className="">
                 <span className={gridParent}><p className={`${category}`}>Permit Number:&nbsp;</p><p className={`line-through decoration-8 ${info} rotate-[-1deg]`}>4815162342-08-CP</p></span>
                 <span className={gridParent}><p className={`${category}`}>Address:&nbsp;</p><p className={`line-through decoration-8 ${info} rotate-[1deg]`}>23 URMAS PL, NEW YORK, NY 10017 </p></span>
@@ -56,7 +56,7 @@ export function  Permit(){
             </div>
 
         </section>
-        <footer className={`lg:h-[30%] lg:p-5 p-2 pb-24 border-t-[1rem] border-black text-[1.5rem] mono-ital flex justify-between flex-col`}>
+        <footer className={`lg:h-[30%] lg:p-5 p-2 pb-24 border-t-4 border-black text-[1.5rem] mono-ital flex justify-between flex-col`}>
             <div className="sans lg:absolute lg:bottom-0 not-italic lg:text-[2.6rem] pb-24 lg:leading-[2.8rem] leading-[1.8rem]">
             <p className="pb-3">Chris is currently the designer for Pitchfork. His work is featured on Pitchfork and GQ, and by <a className="hover:underline" href="https://www.instagram.com/p/C92zCcASIs0/?img_index=1">Charli XCX*</a></p>
             <p className="">He is open for work and/or a coffee. Just hit him at <a className="underline" href="mailto:chris@panicker.design">chris@panicker.design</a></p>
