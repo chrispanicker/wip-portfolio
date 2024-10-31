@@ -1,6 +1,6 @@
 "use client"
 export function  Permit(){
-    const category = "whitespace-nowrap sans-bold capitalize lg:text-[1.6rem] lg:pb-0 pb-2"
+    const category = "whitespace-nowrap sans-bold capitalize lg:text-[1.6rem] lg:pb-0 pb-1"
     const gridParent = "flex lg:flex-row flex-col lg:text-[1.2rem] lg:items-end uppercase lg:pb-0 pb-4"
     const info = "mono-ital lg:mb-[.1rem]"
 
