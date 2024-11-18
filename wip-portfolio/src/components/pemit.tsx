@@ -7,7 +7,25 @@ export function  Permit(){
     return(
         <>
         <header className="duration-500 z-50 bg-white text-[3rem] flex justify-between items-center lg:leading-[4rem] leading-[1rem] lg:mx-5 mx-2 sans-bold">
-            <h1 className="">Chris Panicker</h1>
+            <h1 className="cursor-pointer" onClick={()=>{
+                const main = document.querySelector("main")
+                const mainHeader = document.querySelector("main header")
+                const arrow = document.querySelector("#arrow")
+
+                if(main?.classList.contains("top-0")){
+                    main?.classList.replace("top-0", "top-[93%]")
+                    // main?.classList.remove("rotate-[1deg]", "min-[1300px]:rotate-[-1deg]", "min-[1000px]:rotate-[1deg]", "min-[800px]:rotate-[-1deg]")
+                    arrow?.classList.remove("rotate-180")
+                    mainHeader?.classList.add("transition-[font-size]")
+                    mainHeader?.classList.remove("lg:text-[4rem]")
+                }else if(main?.classList.contains("top-[93%]")){
+                    main?.classList.replace("top-[93%]", "top-0")
+                    // main?.classList.add("rotate-[1deg]", "min-[1300px]:rotate-[-1deg]", "min-[1000px]:rotate-[1deg]", "min-[800px]:rotate-[-1deg]")
+                    arrow?.classList.add("rotate-180")
+                    mainHeader?.classList.add("lg:text-[4rem]")
+                }
+                
+            }}>Chris Panicker</h1>
             <button className="flex justify-center items-center pt-5" onClick={()=>{
                 const main = document.querySelector("main")
                 const mainHeader = document.querySelector("main header")
@@ -41,16 +59,16 @@ export function  Permit(){
         
         <section className="lg:grid lg:grid-cols-2 lg:p-5 p-2 lg:text-[1.5rem] lg:leading-[2.8rem] leading-[1rem]">
             <div className="">
-                <span className={gridParent}><p className={`${category}`}>Permit Number:&nbsp;</p><p className={`line-through decoration-8 ${info} rotate-[-1deg]`}>4815162342-08-CP</p></span>
-                <span className={gridParent}><p className={`${category}`}>Address:&nbsp;</p><p className={`line-through decoration-8 ${info} rotate-[1deg]`}>23 URMAS PL, NEW YORK, NY 10017 </p></span>
+                <span className={gridParent}><p className={`${category}`}>Permit Number:&nbsp;</p><p className={`line-through decoration-[.8rem] ${info} rotate-[-1deg]`}>4815162342-08-CP</p></span>
+                <span className={gridParent}><p className={`${category}`}>Address:&nbsp;</p><p className={`line-through decoration-[.8rem] ${info} rotate-[1deg]`}>23 URMAS PL, NEW YORK, NY 10017 </p></span>
             </div>
             <div className="">
-                <span className={gridParent}><p className={`${category}`}>Issued on:&nbsp;</p><p className={`line-through decoration-8 ${info} rotate-[1deg]`}>10/10/2024</p></span>
-                <span className={gridParent}><p className={`${category}`}>Expires on:&nbsp;</p><p className={`${info} rotate-[-1deg] line-through decoration-8 `}>09/18/20XX</p></span>
+                <span className={gridParent}><p className={`${category}`}>Issued on:&nbsp;</p><p className={`line-through decoration-[.8rem] ${info} rotate-[1deg]`}>10/10/2024</p></span>
+                <span className={gridParent}><p className={`${category}`}>Expires on:&nbsp;</p><p className={`${info} rotate-[-1deg] line-through decoration-[.8rem] `}>09/18/20XX</p></span>
             </div>
             <div className="col-span-2">
                 <span className={`${gridParent}`}>
-                <p className={`${category}`}>Description of Work:&nbsp;</p><p className={`${info} rotate-[-.5deg]`}>Editorial, Motion, Animation, Typography, Creative Code, Branding, etc. </p>
+                <p className={`${category}`}>Description of Work:&nbsp;</p><p className={`${info} rotate-[-.3deg]`}>Editorial, Motion, Animation, Typography, Creative Code, Branding, etc. </p>
                 </span>
                 {/* <p className={gridParent}>ALTERATION TYpe 27 - Converting site into a good time</p> */}
             </div>
