@@ -2,7 +2,7 @@
 export function  Permit(){
     const category = "whitespace-nowrap sans-bold capitalize lg:text-[1.6rem] lg:pb-0 pb-1"
     const gridParent = "flex lg:flex-row flex-col lg:text-[1.2rem] lg:items-end uppercase lg:pb-0 pb-4"
-    const info = "mono-ital lg:mb-[.1rem]"
+    // const info = "mono-ital lg:mb-[.1rem]"
 
     return(
         <>
@@ -59,16 +59,16 @@ export function  Permit(){
         
         <section className="lg:grid lg:grid-cols-2 lg:p-5 p-2 lg:text-[1.5rem] lg:leading-[2.8rem] leading-[1rem]">
             <div className="">
-                <span className={gridParent}><p className={`${category}`}>Permit Number:&nbsp;</p><p className={`line-through decoration-[.8rem] ${info} rotate-[-1deg]`}>4815162342-08-CP</p></span>
-                <span className={gridParent}><p className={`${category}`}>Address:&nbsp;</p><p className={`line-through decoration-[.8rem] ${info} rotate-[1deg]`}>23 URMAS PL, NEW YORK, NY 10017 </p></span>
+                <span className={`${gridParent}`}><p className={`${category}`}>Permit Number:&nbsp;</p><p className={`line-through decoration-[.8rem] rotate-[-1deg]`}>4815162342-08-CP</p></span>
+                <span className={`lg:flex hidden ${gridParent}`}><p className={`${category}`}>Address:&nbsp;</p><p className={`line-through decoration-[.8rem] rotate-[1deg]`}>23 URMAS PL, NEW YORK, NY 10017 </p></span>
             </div>
             <div className="">
-                <span className={gridParent}><p className={`${category}`}>Issued on:&nbsp;</p><p className={`line-through decoration-[.8rem] ${info} rotate-[1deg]`}>10/10/2024</p></span>
-                <span className={gridParent}><p className={`${category}`}>Expires on:&nbsp;</p><p className={`${info} rotate-[-1deg] line-through decoration-[.8rem] `}>09/18/20XX</p></span>
+                <span className={`lg:flex hidden ${gridParent}`}><p className={`${category}`}>Issued on:&nbsp;</p><p className={`line-through decoration-[.8rem] rotate-[1deg]`}>10/10/2024</p></span>
+                <span className={`lg:flex hidden ${gridParent}`}><p className={`${category}`}>Expires on:&nbsp;</p><p className={` rotate-[-1deg] line-through decoration-[.8rem] `}>09/18/20XX</p></span>
             </div>
             <div className="col-span-2">
                 <span className={`${gridParent}`}>
-                <p className={`${category}`}>Description of Work:&nbsp;</p><p className={`${info} rotate-[-.3deg]`}>Editorial, Motion, Animation, Typography, Creative Code, Branding, etc. </p>
+                <p className={`${category}`}>Description of Work:&nbsp;</p><p className={`sans capitalize rotate-[-.3deg]`}>Editorial, Motion, Animation, Typography, Creative Code, Branding, etc. </p>
                 </span>
                 {/* <p className={gridParent}>ALTERATION TYpe 27 - Converting site into a good time</p> */}
             </div>
