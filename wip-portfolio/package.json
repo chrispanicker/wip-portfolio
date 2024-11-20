@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@sanity/asset-utils": "^2.0.6",
-    "@sanity/image-url": "^1.0.2",
+    "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.62.3",
     "firebase": "^10.14.1",
     "firebase-admin": "^12.6.0",

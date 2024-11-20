@@ -1,9 +1,11 @@
+'use client'
 
-import CollaborativeDrawing from "@/components/game1";
 import { Permit } from "@/components/pemit";
+import { urlFor } from "@/sanity/lib/image";
 import { getProjects } from "@/sanity/lib/queries";
 import { getFile } from '@sanity/asset-utils'
 import { PortableText } from "next-sanity";
+import Image from "next/image";
 
 const allProjects = await getProjects()
 
@@ -26,6 +28,7 @@ export default function Home() {
             </span>
             <span className="flex overflow-x-scroll snap-x snap-mandatory">
               {project.images?.map((e:any, index:number) => (
+                e._type === "mp4"?
                   <video key={`project.slug+${index}`} width="1440" height="1080" muted loop autoPlay playsInline preload="true" className="w-[80vw]  h-[50dvh] lg:h-[87dvh] pr-2 snap-center snap-always">
                     <source src={getFile(e, { projectId: `${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}`, dataset: "production" }).asset.url} type="video/mp4" />
                     <track
@@ -36,6 +39,17 @@ export default function Home() {
                     />
                     Your browser does not support the video tag.
                   </video>
+                : e._type ==="image"? <Image
+                src={urlFor(e).url()}
+                alt=""
+                width={1440}
+                height={1080}
+                className="w-[80vw] h-[50dvh] lg:h-[87dvh] pr-2 snap-center snap-always"
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL={`${project.gallery[index].lqip}`}
+                unoptimized={true}
+              /> :""
               ))}
             </span>
           </div>

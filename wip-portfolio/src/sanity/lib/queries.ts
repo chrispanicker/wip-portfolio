@@ -11,6 +11,7 @@ export async function getProjects() {
                 client,
                 type,
                 preview,
+                priority,
                 images,
                 "gallery": images[]{
                     "imageUrl": asset->url,
