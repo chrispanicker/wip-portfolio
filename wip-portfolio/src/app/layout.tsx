@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en max-h-screen max-w-screen">
+    <html lang="en max-h-screen max-w-screen overflow-y-hidden">
       <body
         className={`bg-black `}
       >

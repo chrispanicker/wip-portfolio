@@ -14,7 +14,7 @@ const allProjects = await getProjects()
 export default function Home() {
   return (
     <>
-    <section className="pb-20 snap-y snap-mandatory overflow-y-scroll h-screen w-screen">
+    <section className="pb-20  snap-y snap-mandatory overflow-y-scroll h-screen w-screen">
       {allProjects.map((project:any)=>(
           <div key={project._id} className="relative text-white sans px-5 snap-start snap-always">
             <span className="flex lg:flex-row flex-col lg:justify-between lg:items-end justify-start items-start text-2xl py-3 lg:blur-[.03rem] blur-[.02rem]">
@@ -56,7 +56,7 @@ export default function Home() {
           </div>
       ))}
     </section>
-    <main className="fixed transition-[top,transform] duration-500 top-[93%] w-screen min-h-[100dvh] bg-white overflow-y-scroll outline outline-black outline-2 border border-y-1 border-black lg:blur-[.03rem] blur-[.02rem]">
+    <main className="fixed transition-[top,transform] duration-500 top-[93lvh] w-screen min-h-[100dvh] bg-white overflow-y-scroll outline outline-black outline-2 border border-y-1 border-black lg:blur-[.03rem] blur-[.02rem]">
       <Permit />
     </main>
     {/* <CollaborativeDrawing /> */}

@@ -13,13 +13,13 @@ export function  Permit(){
                 const arrow = document.querySelector("#arrow")
 
                 if(main?.classList.contains("top-0")){
-                    main?.classList.replace("top-0", "top-[93%]")
+                    main?.classList.replace("top-0", "top-[90%]")
                     // main?.classList.remove("rotate-[1deg]", "min-[1300px]:rotate-[-1deg]", "min-[1000px]:rotate-[1deg]", "min-[800px]:rotate-[-1deg]")
                     arrow?.classList.remove("rotate-180")
                     mainHeader?.classList.add("transition-[font-size]")
                     mainHeader?.classList.remove("lg:text-[4rem]")
-                }else if(main?.classList.contains("top-[93%]")){
-                    main?.classList.replace("top-[93%]", "top-0")
+                }else if(main?.classList.contains("top-[90%]")){
+                    main?.classList.replace("top-[90%]", "top-0")
                     // main?.classList.add("rotate-[1deg]", "min-[1300px]:rotate-[-1deg]", "min-[1000px]:rotate-[1deg]", "min-[800px]:rotate-[-1deg]")
                     arrow?.classList.add("rotate-180")
                     mainHeader?.classList.add("lg:text-[4rem]")
@@ -32,13 +32,13 @@ export function  Permit(){
                 const arrow = document.querySelector("#arrow")
 
                 if(main?.classList.contains("top-0")){
-                    main?.classList.replace("top-0", "top-[93%]")
+                    main?.classList.replace("top-0", "top-[90%]")
                     // main?.classList.remove("rotate-[1deg]", "min-[1300px]:rotate-[-1deg]", "min-[1000px]:rotate-[1deg]", "min-[800px]:rotate-[-1deg]")
                     arrow?.classList.remove("rotate-180")
                     mainHeader?.classList.add("transition-[font-size]")
                     mainHeader?.classList.remove("lg:text-[4rem]")
-                }else if(main?.classList.contains("top-[93%]")){
-                    main?.classList.replace("top-[93%]", "top-0")
+                }else if(main?.classList.contains("top-[90%]")){
+                    main?.classList.replace("top-[90%]", "top-0")
                     // main?.classList.add("rotate-[1deg]", "min-[1300px]:rotate-[-1deg]", "min-[1000px]:rotate-[1deg]", "min-[800px]:rotate-[-1deg]")
                     arrow?.classList.add("rotate-180")
                     mainHeader?.classList.add("lg:text-[4rem]")
