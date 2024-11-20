@@ -13,13 +13,13 @@ export function  Permit(){
                 const arrow = document.querySelector("#arrow")
 
                 if(main?.classList.contains("top-0")){
-                    main?.classList.replace("top-0", "top-[90%]")
+                    main?.classList.replace("top-0", "top-[93lvh]")
                     // main?.classList.remove("rotate-[1deg]", "min-[1300px]:rotate-[-1deg]", "min-[1000px]:rotate-[1deg]", "min-[800px]:rotate-[-1deg]")
                     arrow?.classList.remove("rotate-180")
                     mainHeader?.classList.add("transition-[font-size]")
                     mainHeader?.classList.remove("lg:text-[4rem]")
-                }else if(main?.classList.contains("top-[90%]")){
-                    main?.classList.replace("top-[90%]", "top-0")
+                }else if(main?.classList.contains("top-[93lvh]")){
+                    main?.classList.replace("top-[93lvh]", "top-0")
                     // main?.classList.add("rotate-[1deg]", "min-[1300px]:rotate-[-1deg]", "min-[1000px]:rotate-[1deg]", "min-[800px]:rotate-[-1deg]")
                     arrow?.classList.add("rotate-180")
                     mainHeader?.classList.add("lg:text-[4rem]")
@@ -32,13 +32,13 @@ export function  Permit(){
                 const arrow = document.querySelector("#arrow")
 
                 if(main?.classList.contains("top-0")){
-                    main?.classList.replace("top-0", "top-[90%]")
+                    main?.classList.replace("top-0", "top-[93lvh]")
                     // main?.classList.remove("rotate-[1deg]", "min-[1300px]:rotate-[-1deg]", "min-[1000px]:rotate-[1deg]", "min-[800px]:rotate-[-1deg]")
                     arrow?.classList.remove("rotate-180")
                     mainHeader?.classList.add("transition-[font-size]")
                     mainHeader?.classList.remove("lg:text-[4rem]")
-                }else if(main?.classList.contains("top-[90%]")){
-                    main?.classList.replace("top-[90%]", "top-0")
+                }else if(main?.classList.contains("top-[93lvh]")){
+                    main?.classList.replace("top-[93lvh]", "top-0")
                     // main?.classList.add("rotate-[1deg]", "min-[1300px]:rotate-[-1deg]", "min-[1000px]:rotate-[1deg]", "min-[800px]:rotate-[-1deg]")
                     arrow?.classList.add("rotate-180")
                     mainHeader?.classList.add("lg:text-[4rem]")
@@ -74,8 +74,8 @@ export function  Permit(){
             </div>
 
         </section>
-        <footer className={`lg:h-[30%] lg:p-5 p-2 pb-24 border-t-4 border-black text-[1.5rem] mono-ital flex justify-between flex-col`}>
-            <div className="sans lg:absolute lg:bottom-0 not-italic lg:text-[2.6rem] pb-24 lg:leading-[2.8rem] leading-[1.8rem]">
+        <footer className={`lg:h-[30%] lg:p-5 p-2 pb-24 border-t-4 border-black text-[1.5rem] mono-ital flex lg:justify-between flex-col`}>
+            <div className="sans lg:absolute lg:bottom-0 not-italic lg:text-[2.6rem] lg:pb-24 pb-5 lg:leading-[2.8rem] leading-[1.8rem]">
             <p className="pb-3">Chris is currently the designer for Pitchfork. His work is featured on Pitchfork and GQ, and by <a className="hover:underline" href="https://www.instagram.com/p/C92zCcASIs0/?img_index=1">Charli XCX*</a></p>
             <p className="">He is open for work and/or a coffee. Just hit him at <a className="underline" href="mailto:chris@panicker.design">chris@panicker.design</a></p>
             </div>
