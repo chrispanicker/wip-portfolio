@@ -70,7 +70,6 @@ export function  Permit(){
                 <span className={`${gridParent}`}>
                 <p className={`${category}`}>Description of Work:&nbsp;</p><p className={`sans capitalize rotate-[-.3deg]`}>Editorial, Motion, Animation, Typography, Creative Code, Branding, etc. </p>
                 </span>
-                {/* <p className={gridParent}>ALTERATION TYpe 27 - Converting site into a good time</p> */}
             </div>
 
         </section>
