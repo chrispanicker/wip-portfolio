@@ -46,7 +46,7 @@ export function Menu({
         id="info"
         className={`mono fixed left-0 z-50 ${
           menu === "open" ? "top-0" : "top-full"
-        } bg-white w-screen h-screen transition-[top] duration-500 flex flex-col justify-between lg:p-10 p-5`}
+        } bg-white w-screen h-[100svh] transition-[top] duration-500 flex flex-col justify-between lg:p-10 p-5`}
       >
         <span className="top-0">
           {allProjects.map((project: any) => (
