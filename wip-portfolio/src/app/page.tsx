@@ -1,8 +1,5 @@
-
-import { Menu } from "@/components/menu";
 import SynchronizedScrollComponent from "@/components/syncScroll";
 import { getProjects } from "@/sanity/lib/queries";
-import { useRouter } from "next/navigation";
 const allProjects = await getProjects()
 
 

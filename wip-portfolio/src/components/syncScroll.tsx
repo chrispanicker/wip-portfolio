@@ -7,6 +7,7 @@ import { urlFor } from '@/sanity/lib/image'
 import { getFile } from '@sanity/asset-utils'
 import { Menu } from './menu'
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 export default function SynchronizedScrollComponent({ allProjects }: { allProjects: any[] }) {
   const galRef = useRef<HTMLDivElement>(null)

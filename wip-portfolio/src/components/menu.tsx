@@ -1,11 +1,12 @@
 "use client"
 
 import { useSearchParams, useRouter } from "next/navigation"
-import { useRef, useEffect } from "react"
+import { useEffect } from "react"
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 export function Menu({
   allProjects,
-  galRef,
   updateScrollPositions,
 }: {
   allProjects: any[]
@@ -75,7 +76,7 @@ export function Menu({
                 Charli XCX {" (kinda)"}...
               </a>
               <br className="hidden lg:block" />
-              He's open for work and/or a coffee. <a className="hover:underline" href="https://instagram.com/chrispanicker">@chrispanicker</a> or <a className="hover:underline" href="mailto:chris@panicker.design">chris@panicker.design</a>
+             {`He's open for work and/or a coffee.`} <a className="hover:underline" href="https://instagram.com/chrispanicker">@chrispanicker</a> or <a className="hover:underline" href="mailto:chris@panicker.design">chris@panicker.design</a>
             </p>
           </div>
           <span className="flex w-full justify-end items-end z-50">
