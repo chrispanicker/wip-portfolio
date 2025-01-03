@@ -8,7 +8,7 @@ const allProjects = await getProjects()
 //test
 export default function Home() {
   return (<>
-      <main className="w-screen h-[100svh] absolute top-0 left-0 lg:p-10 p-5 mono">
+      <main className="w-screen h-[100svh] absolute top-0 left-0 lg:p-10 p-5 mono ">
         <Suspense>
             <SynchronizedScrollComponent allProjects={allProjects} />
         </Suspense>
