@@ -150,7 +150,7 @@ export default function SynchronizedScrollComponent({ allProjects }: { allProjec
                         alt={`Project image ${index + 1} for ${project.name}`}
                         width={1440}
                         height={1080}
-                        className="object-cover snap-start snap-always max-w-[100vw] lg:w-auto w-[100vw] lg:h-full h-[50%] lg:pr-1"
+                        className="object-cover snap-start snap-always max-w-[100vw] lg:w-auto w-[100vw] lg:h-full h-auto lg:pr-1"
                         loading="lazy"
                         placeholder="blur"
                         blurDataURL={`${project.gallery[index].lqip}`}
