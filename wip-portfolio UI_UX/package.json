@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@sanity/asset-utils": "^2.0.6",
-    "@sanity/client": "^6.24.1",
     "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.62.3",
     "firebase": "^10.14.1",
@@ -18,7 +17,6 @@
     "framer-motion": "^11.11.9",
     "next": "14.2.15",
     "next-sanity": "^9.8.8",
-    "next-sanity-image": "^6.1.1",
     "react": "^18",
     "react-dom": "^18",
     "react-firebase-hooks": "^5.1.1",
