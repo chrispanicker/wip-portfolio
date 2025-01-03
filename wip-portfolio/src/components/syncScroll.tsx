@@ -125,7 +125,7 @@ export default function SynchronizedScrollComponent({ allProjects }: { allProjec
         <div
           id="proj-gal"
           ref={galRef}
-          className="w-full h-[92%] overflow-y-scroll snap-y snap-mandatory lg:bg-white bg-black"
+          className="w-full lg:h-[92%] h-[90%] overflow-y-scroll snap-y snap-mandatory lg:bg-white bg-black"
         >
           {allProjects.map((project: any) => (
             <div key={project._id} className="h-full snap-always snap-start pt-1">
@@ -166,7 +166,7 @@ export default function SynchronizedScrollComponent({ allProjects }: { allProjec
         <div
           id="proj-info"
           ref={infoRef}
-          className="overflow-y-hidden h-[8%]"
+          className="overflow-y-hidden lg:h-[8%] h-[10%]"
         >
           <div className="h-full flex flex-col">
             {allProjects.map((project: any) => (
