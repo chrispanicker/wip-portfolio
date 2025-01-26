@@ -2,14 +2,13 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import Image from 'next/image'
-import { urlFor } from '@/sanity/lib/image'
-import { getFile } from '@sanity/asset-utils'
 import { Menu } from './menu'
+import ProjectMedia from './projectMedia'
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export default function SynchronizedScrollComponent({ allProjects }: { allProjects: any[] }) {
+  
   //refs for elements (used for components that rely on existense of elements)
   const galRef = useRef<HTMLDivElement>(null)
   const infoRef = useRef<HTMLDivElement>(null)
@@ -142,37 +141,10 @@ export default function SynchronizedScrollComponent({ allProjects }: { allProjec
           className="w-full h-[92%] overflow-y-scroll snap-y snap-mandatory lg:bg-white bg-black"
         >
           {allProjects.map((project: any) => (
+            
             <div key={project._id} className="h-full snap-always lg:snap-start snap-center pt-1">
               <div className="flex overflow-x-scroll snap-x snap-mandatory h-full">
-                {project.images?.map((e: any, index: number) => (
-                  e._type === "mp4" ? (
-                    <video key={`${project.slug}-${index}`} width="1440" height="1080" muted loop autoPlay playsInline preload="true" className="max-w-[100vw] lg:pr-1 lg:snap-start snap-center snap-always h-full">
-                      <source src={getFile(e, { projectId: `${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}`, dataset: "production" }).asset.url} type="video/mp4" />
-                      <track
-                        src="/path/to/captions.vtt"
-                        kind="subtitles"
-                        srcLang="en"
-                        label="English"
-                      />
-                      Your browser does not support the video tag.
-                    </video>
-                  ) : e._type === "image" ? (
-                    <div className='flex justify-center items-center max-w-[100vw] h-full'>
-                      <Image
-                        key={`${project.slug}-${index}`}
-                        src={urlFor(e).url()}
-                        alt={`Project image ${index + 1} for ${project.name}`}
-                        width={1440}
-                        height={1080}
-                        className="object-cover lg:snap-start snap-center snap-always max-w-[100vw] lg:w-auto w-[100vw] lg:h-full h-auto lg:pr-1"
-                        loading="lazy"
-                        placeholder="blur"
-                        blurDataURL={`${project.gallery[index].lqip}`}
-                        unoptimized={true}
-                      />
-                    </div>
-                  ) : null
-                ))}
+                <ProjectMedia project={project} />
               </div>
             </div>
           ))}
