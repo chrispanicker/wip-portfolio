@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="overflow-hidden">
       <body
-        className={`overflow-hidden cursor-none`}
+        className={`overflow-hidden`}
       >
         {children}
       </body>
