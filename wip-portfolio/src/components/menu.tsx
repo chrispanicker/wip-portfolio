@@ -36,7 +36,7 @@ export function Menu({
 
   return (
     <>
-      <button className="mono fixed bottom-0 right-0  lg:p-10 p-5 hover:underline"
+      <button className="mono fixed bottom-0 right-0  lg:p-10 p-5 hover:underline cursor-none"
         onClick={() => {
           router.push(projectSlug ? `?project=${projectSlug}&menu=open` : `?menu=open`, { scroll: false })
         }}
@@ -50,7 +50,7 @@ export function Menu({
       >
         <span className="top-0">
           {allProjects.map((project: any) => (
-            <div key={project.slug} className="lg:grid lg:grid-cols-6 hover:underline cursor-pointer "
+            <div key={project.slug} className="lg:grid lg:grid-cols-6 hover:underline"
             onClick={() => {
                 scrollToProject(project.slug)
                 router.push(`?project=${project.slug}`, { scroll: false })
@@ -80,7 +80,7 @@ export function Menu({
             </p>
           </div>
           <span className="flex w-full justify-end items-end z-50">
-            <button className="hover:underline"
+            <button className="hover:underline cursor-none"
               onClick={() => {
                 router.push(projectSlug ? `?project=${projectSlug}` : '?', { scroll: false })
               }}

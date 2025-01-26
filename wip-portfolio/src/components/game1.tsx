@@ -8,7 +8,7 @@ type CursorData = {
   id: string;
   ratioX: number;
   ratioY: number;
-  color: string;
+  randChar: string;
   lastActive?: number;
 };
 
@@ -49,10 +49,10 @@ const Cursors: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    // Generate a unique user ID and random color
+    // Generate a unique user ID and random letter
     const userId = Math.random().toString(36).substring(2, 9);
-    const color = `hsl(${Math.random() * 360}, 100%, 50%)`;
-
+    const chars = "CHRIS"
+    const randChar = chars.charAt(Math.floor(Math.random() * chars.length))
     const cursorRef = ref(database, `cursors/${userId}`);
 
     const handleMouseMove = (event: MouseEvent) => {
@@ -63,7 +63,7 @@ const Cursors: React.FC = () => {
         id: userId,
         ratioX,
         ratioY,
-        color,
+        randChar,
         lastActive: Date.now(),
       });
     };
@@ -105,13 +105,13 @@ const Cursors: React.FC = () => {
               top: y,
               width: 10,
               height: 10,
-              backgroundColor: cursor.color,
+              // backgroundColor: cursor.color,
               borderRadius: "50%",
               pointerEvents: "none",
               transform: "translate(-50%, -50%)",
               zIndex: 1000,
             }}
-          />
+          >{cursor.randChar}</div>
         );
       })}
     </>

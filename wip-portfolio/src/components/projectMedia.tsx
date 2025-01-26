@@ -34,7 +34,7 @@ export default function ProjectMedia({ project }:any) {
             placeholder="blur"
             blurDataURL={`${project.gallery[index].lqip}`}
             unoptimized={true}
-            onLoadingComplete={() => handleLoad(index)} // Update the specific index
+            onLoad={() => handleLoad(index)} // Update the specific index
           />
         </div>
       ) : e._type === "mp4" ? (

@@ -15,7 +15,7 @@ export default function Home() {
             <SynchronizedScrollComponent allProjects={allProjects} />
         </Suspense>
         <footer className=" w-full flex justify-between items-end h-[5%]">
-          <button className="sans hover:underline">CHRIS PANICKER</button>
+          <button className="sans hover:underline cursor-none">CHRIS PANICKER</button>
         </footer>
       </main>
     </>);
