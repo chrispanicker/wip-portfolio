@@ -1,119 +1,121 @@
-// 'use client'
+"use client"
+import React, { useEffect, useState } from "react";
+import { database } from "../../firebase.config";
+import { ref, set, onValue, remove } from "firebase/database";
+import { cleanupStaleData } from "./cleanup";
 
-// import React, { useRef, useEffect, useState } from 'react'
-// import { initializeApp } from 'firebase/app'
-// import { getDatabase, ref, onValue, push, set } from 'firebase/database'
-// import { fbAPIKey, fbAppID, fbAuthDomain, fbMessagingSenderID, fbProjectID, fbStorageBucket } from '@/sanity/env'
+type CursorData = {
+  id: string;
+  ratioX: number;
+  ratioY: number;
+  color: string;
+  lastActive?: number;
+};
 
-// // Firebase configuration
-// const firebaseConfig = {
-//   // Replace with your Firebase project configuration
-//   apiKey: fbAPIKey,
-//   authDomain: fbAuthDomain,
-// //   databaseURL: "YOUR_DATABASE_URL",
-//   projectId: fbProjectID,
-//   storageBucket: fbStorageBucket,
-//   messagingSenderId: fbMessagingSenderID,
-//   appId: fbAppID
-// }
+const Cursors: React.FC = () => {
+  const [cursors, setCursors] = useState<CursorData[]>([]);
 
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig)
-// const database = getDatabase(app)
+  useEffect(() => {
+    // 1) Do an immediate cleanup whenever a user connects (component mounts)
+    cleanupStaleData();
 
-// export default function CollaborativeDrawing() {
-//   const canvasRef = useRef<HTMLCanvasElement>(null)
-//   const [isDrawing, setIsDrawing] = useState(false)
-//   const [color, setColor] = useState('#000000')
+    // 2) Then set an interval to keep cleaning while at least one user is active
+    const intervalId = setInterval(() => {
+      cleanupStaleData();
+    }, 10_000);
 
-//   useEffect(() => {
-//     const canvas = canvasRef.current
-//     const context = canvas?.getContext('2d')
-//     if (!canvas || !context) return
+    // Cleanup on unmount
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
 
-//     // Set up Firebase listener
-//     const drawingsRef = ref(database, 'drawings')
-//     onValue(drawingsRef, (snapshot) => {
-//       const data = snapshot.val()
-//       if (!data) return
+  // Track window size in local state
+  const [windowSize, setWindowSize] = useState({
+    width: typeof window !== "undefined" ? window.innerWidth : 1920,
+    height: typeof window !== "undefined" ? window.innerHeight : 1080,
+  });
 
-//       context.clearRect(0, 0, canvas.width, canvas.height)
-//       Object.values(data).forEach((drawing: any) => {
-//         context.strokeStyle = drawing.color
-//         context.beginPath()
-//         context.moveTo(drawing.startX, drawing.startY)
-//         context.lineTo(drawing.endX, drawing.endY)
-//         context.stroke()
-//       })
-//     })
-//   }, [])
+  useEffect(() => {
+    // Update window size on resize
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-//   const startDrawing = (e: React.MouseEvent<HTMLCanvasElement>) => {
-//     setIsDrawing(true)
-//     draw(e)
-//   }
+  useEffect(() => {
+    // Generate a unique user ID and random color
+    const userId = Math.random().toString(36).substring(2, 9);
+    const color = `hsl(${Math.random() * 360}, 100%, 50%)`;
 
-//   const stopDrawing = () => {
-//     setIsDrawing(false)
-//   }
+    const cursorRef = ref(database, `cursors/${userId}`);
 
-//   const draw = (e: React.MouseEvent<HTMLCanvasElement>) => {
-//     if (!isDrawing) return
+    const handleMouseMove = (event: MouseEvent) => {
+      const ratioX = event.clientX / window.innerWidth;
+      const ratioY = event.clientY / window.innerHeight;
 
-//     const canvas = canvasRef.current
-//     const context = canvas?.getContext('2d')
-//     if (!canvas || !context) return
+      set(cursorRef, {
+        id: userId,
+        ratioX,
+        ratioY,
+        color,
+        lastActive: Date.now(),
+      });
+    };
 
-//     const rect = canvas.getBoundingClientRect()
-//     const x = e.clientX - rect.left
-//     const y = e.clientY - rect.top
+    window.addEventListener("mousemove", handleMouseMove);
 
-//     context.strokeStyle = color
-//     context.lineWidth = 2
-//     context.lineCap = 'round'
+    // Remove cursor on component unmount
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      remove(cursorRef);
+    };
+  }, []);
 
-//     context.lineTo(x, y)
-//     context.stroke()
-//     context.beginPath()
-//     context.moveTo(x, y)
+  useEffect(() => {
+    // Listen for changes in "cursors" node
+    const cursorsRef = ref(database, "cursors");
+    const unsubscribe = onValue(cursorsRef, (snapshot) => {
+      const data = snapshot.val() || {};
+      const cursorArray = Object.values(data) as CursorData[];
+      setCursors(cursorArray);
+    });
 
-//     // Save drawing data to Firebase
-//     const drawingsRef = ref(database, 'drawings')
-//     const newDrawingRef = push(drawingsRef)
-//     set(newDrawingRef, {
-//       startX: x,
-//       startY: y,
-//       endX: x,
-//       endY: y,
-//       color: color
-//     })
-//   }
+    return () => unsubscribe();
+  }, []);
 
-//   return (
-//     <div className="flex flex-col items-center space-y-4">
-//       <h1 className="text-2xl font-bold">Collaborative Drawing</h1>
-//       <div className="flex items-center space-x-4">
-//         <label htmlFor="color-picker" className="font-medium">
-//           Color:
-//         </label>
-//         <input
-//           id="color-picker"
-//           type="color"
-//           value={color}
-//           onChange={(e) => setColor(e.target.value)}
-//           className="w-10 h-10 border border-gray-300 rounded"
-//         />
-//       </div>
-//       <canvas
-//         ref={canvasRef}
-//         width={800}
-//         height={600}
-//         onMouseDown={startDrawing}
-//         onMouseUp={stopDrawing}
-//         onMouseOut={stopDrawing}
-//         onMouseMove={draw}
-//         className="border border-gray-300 rounded"
-//       />
-//     </div>
-//   )
-// }
+  return (
+    <>
+      {cursors.map((cursor) => {
+        // Convert ratio back to pixel position
+        const x = cursor.ratioX * windowSize.width;
+        const y = cursor.ratioY * windowSize.height;
+
+        return (
+          <div className="cursor-none"
+            key={cursor.id}
+            style={{
+              position: "absolute",
+              left: x,
+              top: y,
+              width: 10,
+              height: 10,
+              backgroundColor: cursor.color,
+              borderRadius: "50%",
+              pointerEvents: "none",
+              transform: "translate(-50%, -50%)",
+              zIndex: 1000,
+            }}
+          />
+        );
+      })}
+    </>
+  );
+};
+
+export default Cursors;

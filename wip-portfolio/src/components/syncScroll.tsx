@@ -22,7 +22,7 @@ export default function SynchronizedScrollComponent({ allProjects }: { allProjec
   const router = useRouter()
   const searchParams = useSearchParams()
 
-  const updateScrollHeights = () => {
+  const updateScrollHeights = useCallback(() => {
     const galElement = galRef.current
     const infoElement = infoRef.current
 
@@ -41,7 +41,7 @@ export default function SynchronizedScrollComponent({ allProjects }: { allProjec
       setGalScrollHeight(galActualHeight - galVisibleHeight)
       setInfoScrollHeight(infoActualHeight - infoVisibleHeight)
     }
-  }
+  }, [])
   //useEffect runs when updateScrollHeights updates?
   useEffect(() => {
     updateScrollHeights()
@@ -63,11 +63,11 @@ export default function SynchronizedScrollComponent({ allProjects }: { allProjec
     infoElement.scrollTop = Math.round(infoScrollPosition)
 
     //height of the <section> parent element
-    const parentHeight = galElement.parentElement?.clientHeight || 0
-
+    // const parentHeight = galElement.parentElement?.clientHeight || 0
     //making an index value for where the user has scrolled divided by
     // const visibleIndex = Math.round(galScrollPosition / parentHeight)
     // ^^ this doesnt work because the parent height includes the info section, we need it to be based on the visible (clientHeight) of the gal element
+    
     const visibleIndex =  Math.round(galScrollPosition / galElement.clientHeight)
     const visibleProject = allProjects[visibleIndex]
     //sets the slug to project.slug
@@ -139,7 +139,7 @@ export default function SynchronizedScrollComponent({ allProjects }: { allProjec
       <section className="w-full h-[95%] flex flex-col">
         {/* on desktop, gal is 92% height */}
         <div id="proj-gal" ref={galRef}
-          className="w-full lg:h-[92%] h-[90%] overflow-y-scroll snap-y snap-mandatory lg:bg-white bg-black"
+          className="w-full h-[92%] overflow-y-scroll snap-y snap-mandatory lg:bg-white bg-black"
         >
           {allProjects.map((project: any) => (
             <div key={project._id} className="h-full snap-always lg:snap-start snap-center pt-1">
@@ -180,7 +180,7 @@ export default function SynchronizedScrollComponent({ allProjects }: { allProjec
         <div
           id="proj-info"
           ref={infoRef}
-          className="overflow-y-hidden lg:h-[8%] h-[10%]"
+          className="overflow-y-hidden h-[8%]"
         >
           <div className="h-full flex flex-col">
             {allProjects.map((project: any) => (
