@@ -97,7 +97,7 @@ const Cursors: React.FC = () => {
         const y = cursor.ratioY * windowSize.height;
 
         return (
-          <div className="cursor-none"
+          <div className="cursor-none mix-blend-difference z-100 text-white"
             key={cursor.id}
             style={{
               position: "absolute",
